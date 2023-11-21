@@ -1,8 +1,32 @@
 .spinner{
   font-size: 140px;
+  display:block;
+  width: 100px;
+  height: 100px;
+  position:relative;
 }
+
+
+
 .spinner:after {
   content: '◌';
+  display: block;
+  position: absolute;
+  margin-top: -30px;
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 50%;
+
+}
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }
 
 #chart {
