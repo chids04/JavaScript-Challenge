@@ -7,6 +7,9 @@
 }
 
 
+.spinner.hidden{
+  display: none;
+}
 
 .spinner:after {
   content: '◌';

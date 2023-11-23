@@ -28,7 +28,7 @@ async function getStockInfo(stock){
   try{
     const stockInfo = await fetch('http://localhost:3000/stocks/' + stock)
     const stockData = await responseHandler(stockInfo)
-    await console.log("Here are the values for " + stock + " stock " + stockData)
+    await console.log("Here are the values for " + stock + " stock " + Object.values(stockData[0]))
   }
   catch(error){
     console.error(error.message)
@@ -46,6 +46,9 @@ async function getStocks() {
     for(let i = 0; i<symbols.length; i++){
       await getStockInfo(symbols[i])
     }
+
+    spinner = document.querySelector('.spinner')
+    spinner.classList.add('hidden')
   }
   catch(error){
     console.error(error.message);
